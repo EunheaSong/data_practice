@@ -1,13 +1,13 @@
-package com.goodeveloper.jpapractice;
+package com.goodeveloper.datapractice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JpaPracticeApplication {
+public class DataPracticeApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JpaPracticeApplication.class, args);
+        SpringApplication.run(DataPracticeApplication.class, args);
     }
 
 }

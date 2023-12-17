@@ -1,10 +1,10 @@
-package com.goodeveloper.jpapractice;
+package com.goodeveloper.datapractice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JpaPracticeApplicationTests {
+class DataPracticeApplicationTests {
 
     @Test
     void contextLoads() {
