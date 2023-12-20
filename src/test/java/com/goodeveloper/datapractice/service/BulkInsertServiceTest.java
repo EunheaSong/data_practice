@@ -20,6 +20,10 @@ public class BulkInsertServiceTest {
     @Autowired
     private BoardRepository boardRepository;
 
+    @Autowired
+    private BatchRepository batchRepository;
+
+
     @Test
     public void bulkInsertSaveAll(){
         //given
@@ -43,6 +47,32 @@ public class BulkInsertServiceTest {
         //then
         boardRepository.saveAll(boardsList);
         System.out.println(System.currentTimeMillis() - s);
-        Assertions.assertEquals(50, i);
+        Assertions.assertEquals(51, i);
+    }
+
+    @Test()
+    public void jdbcBatchTest(){
+        //given
+        List<Board> boardsList = new ArrayList<>();
+        int i = 0;
+        while (i <= 50) {
+            boardsList.add(
+                new Board(
+                    "제목",
+                    "내용",
+                    LocalDateTime.now(),
+                    LocalDateTime.now()
+                )
+            );
+            i++;
+        }
+        long s = System.currentTimeMillis();
+        System.out.println(s);
+        //when
+
+        //then
+        batchRepository.saveAll(boardsList);
+        System.out.println(System.currentTimeMillis() - s);
+        Assertions.assertEquals(51, i);
     }
 }
